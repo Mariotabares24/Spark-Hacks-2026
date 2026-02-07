@@ -100,7 +100,3 @@ Product data from the [Kaggle Grainger Products Database (140k records)](https:/
 - **Himanshu Panchal**
 - **Anthony Valenzo**
 - **Mario Tabares**
-
-## License
-
-SparkHacks 2026  University of Illinois at Chicago
