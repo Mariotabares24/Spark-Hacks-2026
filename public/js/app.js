@@ -467,6 +467,56 @@ const App = (() => {
     updateCompareBadge();
   }
 
+  // ─── Chatbot Init ──────────────────
+  function initChatbot() {
+    console.log("Chatbot initialized");
+
+    const chatbotBox = document.getElementById("chatbot-chatbox");
+    const chatbotUserPrompt = document.getElementById("chatbot-user-prompt");
+    const chatbotSubmitBtn = document.getElementById("chatbot-submit-btn");
+
+    chatbotSubmitBtn.addEventListener("click", async () => {
+      chatbotSubmitBtn.disabled = true;
+
+      let userPrompt = chatbotUserPrompt.value;
+      let robotBubble = document.createElement("div");
+      
+      robotBubble.classList.add("chatbot-chatbox-bubble__robot");
+      robotBubble.classList.add("chatbot-chatbox-bubble");
+
+      robotBubble.innerHTML = "Please wait...";
+      chatbotBox.appendChild(robotBubble);
+
+      if (userPrompt == "") {
+        showToast("User prompt cannot be empty")
+      }
+
+      try {
+        let url = "/chat?userPrompt=" + userPrompt;
+        let response = await fetch(url);
+        let json = await response.json();
+
+        robotBubble.innerHTML = json.description;
+
+        if (json.products && json.products.length > 0) {
+          for (let id of json.products) {
+            robotBubble.innerHTML += `<a href="http://localhost:3000/product.html?id=${id + 1}">Product #${id + 1}</a><br>`;
+          }
+        }
+      } catch (err) {
+        robotBubble.innerHTML = "I'm sorry but I wasn't able to process your request. Please try again!";
+        console.error(err);
+      }
+
+
+
+
+
+      chatbotSubmitBtn.disabled = false;
+    });
+
+  }
+
   // ─── Init on DOM Ready ─────────────────
   function onReady(callback) {
     if (document.readyState !== "loading") {
@@ -509,6 +559,7 @@ const App = (() => {
     bindPagination,
     getCategoryIcon,
     initNav,
+    initChatbot,
     onReady,
   };
 })();
