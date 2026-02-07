@@ -32,6 +32,15 @@ App.onReady(async () => {
 
   // Update compare bar
   App.updateCompareBar();
+
+  // Chatbot toggle
+  const chatToggle = document.getElementById("chatbot-toggle-btn");
+  const chatModal = document.querySelector(".chatbot-modal");
+  if (chatToggle && chatModal) {
+    chatToggle.addEventListener("click", () => {
+      chatModal.classList.toggle("chatbot-modal--open");
+    });
+  }
 });
 
 function renderCategories(categories) {
