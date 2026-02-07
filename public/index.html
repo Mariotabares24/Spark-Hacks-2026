@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GraingeSeek: A simplified industrial product catalog. Find, compare, and select the right parts faster.">
-  <title>GraingeSeek  Industrial Product Catalog</title>
+  <meta name="description"
+    content="GraingeSeek: A simplified industrial product catalog. Find, compare, and select the right parts faster.">
+  <title>GraingeSeek — Industrial Product Catalog</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <a class="skip-nav" href="#main-content">Skip to main content</a>
 
@@ -18,7 +21,8 @@
         GraingeSeek
       </a>
       <div class="header__search" role="search" aria-label="Search products">
-        <input type="text" class="header__search-input" placeholder="Search products, brands, categories..." aria-label="Search products">
+        <input type="text" class="header__search-input" placeholder="Search products, brands, categories..."
+          aria-label="Search products">
         <button class="header__search-btn" aria-label="Search">&#128269;</button>
       </div>
       <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
@@ -38,9 +42,11 @@
     <section class="hero" aria-label="Search hero">
       <div class="hero__inner">
         <h1 class="hero__title">Find the Right Industrial Parts Fast</h1>
-        <p class="hero__subtitle">Search 100+ products across 24 categories. Compare specs side-by-side and build your quote list in seconds.</p>
+        <p class="hero__subtitle">Search 100+ products across 24 categories. Compare specs side-by-side and build your
+          quote list in seconds.</p>
         <div class="hero__search" role="search" aria-label="Hero search">
-          <input type="text" class="hero__search-input" id="hero-search" placeholder="Search by product name, brand, or keyword..." aria-label="Search products">
+          <input type="text" class="hero__search-input" id="hero-search"
+            placeholder="Search by product name, brand, or keyword..." aria-label="Search products">
           <button class="hero__search-btn" id="hero-search-btn" aria-label="Search">&#128269;</button>
         </div>
       </div>
@@ -51,7 +57,9 @@
       <section aria-label="Browse by category">
         <h2 class="section-title">Browse by Category</h2>
         <div class="categories-grid" id="categories-grid">
-          <div class="loading"><div class="loading__spinner"></div> Loading categories...</div>
+          <div class="loading">
+            <div class="loading__spinner"></div> Loading categories...
+          </div>
         </div>
       </section>
 
@@ -59,7 +67,9 @@
       <section aria-label="Featured products">
         <h2 class="section-title">Featured Products</h2>
         <div class="featured-grid" id="featured-grid">
-          <div class="loading"><div class="loading__spinner"></div> Loading products...</div>
+          <div class="loading">
+            <div class="loading__spinner"></div> Loading products...
+          </div>
         </div>
       </section>
     </div>
@@ -98,16 +108,41 @@
       </div>
       <div class="footer__section">
         <h3>Data Source</h3>
-        <a href="https://www.kaggle.com/datasets/thedevastator/grainger-products-database-140k-records/data" target="_blank" rel="noopener">Kaggle Dataset</a>
+        <a href="https://www.kaggle.com/datasets/thedevastator/grainger-products-database-140k-records/data"
+          target="_blank" rel="noopener">Kaggle Dataset</a>
         <a href="https://github.com/Himanshu-1804/Spark-Hacks-2026" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
     </div>
     <div class="footer__bottom">
-      &copy; 2026 GraingeSeek  SparkHacks 2026 | Himanshu Panchal, Anthony Valenzo, Mario Tabares
+      &copy; 2026 GraingeSeek — SparkHacks 2026 | Himanshu Panchal, Anthony Valenzo, Mario Tabares
     </div>
   </footer>
+
+  <!-- AI Chatbot -->
+  <div class="chatbot">
+    <div class="chatbot-modal">
+      <div class="chatbot-chatbox" id="chatbot-chatbox">
+        <div class="chatbot-chatbox-bubble chatbot-chatbox-bubble__robot">
+          Hello! I am your GraingeSeek assistant. I can help you find information on a wide variety of products
+          including fasteners, plumbing fixtures, safety equipment, industrial tools, and more. Please let me know what
+          specific product or category you are looking for today!
+        </div>
+      </div>
+
+      <div class="chatbot-chatbox-userbox" role="search" aria-label="Chatbot search">
+        <textarea type="text" id="chatbot-user-prompt" placeholder="Ask GraingeSeek AI for help searching for products!"
+          aria-label="Ask GraingeSeek AI for help search for our products!" rows="4" cols="50" id="chatbot-user-prompt"></textarea>
+        <button id="chatbot-submit-btn" aria-label="Search">🔍</button>
+      </div>
+    </div>
+
+    <button class="btn btn--primary">
+      <img width="32" src="https://static.thenounproject.com/png/4206274-200.png">
+    </button>
+  </div>
 
   <script src="js/app.js"></script>
   <script src="js/home.js"></script>
 </body>
+
 </html>
