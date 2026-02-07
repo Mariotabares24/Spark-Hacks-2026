@@ -4,6 +4,7 @@
 
 App.onReady(async () => {
   App.initNav();
+  App.initChatbot();
 
   // Hero search
   const heroInput = document.getElementById("hero-search");

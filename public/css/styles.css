@@ -1571,6 +1571,7 @@ main {
     display: none;
     flex-direction: column;
     gap: 1rem;
+    height: 70vh;
   }
 
   .chatbot-modal--open {
@@ -1580,6 +1581,8 @@ main {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      height: 100%;
+      overflow: scroll;
 
       .chatbot-chatbox-bubble {
         padding: 0.5rem 1rem;
